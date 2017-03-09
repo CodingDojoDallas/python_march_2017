@@ -1,0 +1,43 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+h3{
+	font-style: bold;
+}
+#index{
+	background-color: seashell;
+	width: 970px;
+	border: 2px solid black;
+}
+
+#kim{
+	width: 400px;
+}
+
+#ninjas{
+	background-color: goldenrod;
+	border: 2px solid black;
+	/*width: 600px;*/
+}
+p #about{
+	width: 600px;
+}
+
+#dojos{
+	background-color: steelblue;
+}
+
+#group{
+	width: 400px;
+}
+
+#script{
+	width: 200px;
+}
+
+element.style {
+    width: 400px;
+}
