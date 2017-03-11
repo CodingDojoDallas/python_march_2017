@@ -1,0 +1,57 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#survey{
+  width: 970px;
+}
+
+form{
+  border: 2px solid black;
+  margin: 100px;
+  text-align: center;
+  width: 720px;
+  height: 500px;
+  padding-top: 40px;
+  font-size: 25px;
+}
+
+#name{
+  height: 80px;
+  width: 680px;
+  margin-left: 20px;
+}
+
+input{
+  height: 25px;
+}
+
+select{
+  width: 100px;
+  height: 30px;
+}
+
+#location{
+  height: 80px;
+  width: 680px;
+  margin-left: 20px;
+}
+
+
+
+#language{
+  height: 80px;
+  width: 680px;
+  margin-left: 20px;
+}
+
+  #language select{
+    height: 30px;
+  }
+
+textarea{
+  width: 400px;
+  height: 150px;
+  resize: none;
+}

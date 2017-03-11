@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey</title>
+    <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='index.css')}}">
+  </head>
+  <body>
+    <div id = 'survey'>
+      <!-- to define area with border -->
+
+      <form action = '/users' method = 'post'>
+        <!-- p tags used to define area for form items -->
+        <p id = 'name'>Your Name: <input type = 'text' name = 'name'>
+        </p>
+        <p id = 'location'>Dojo Location:
+          <select name = 'location'>
+            <option value = 'Seattle'>Seattle</option>
+            <option value = 'Chicago'>Chicago</option>
+            <option value = 'Dallas'>Dallas</option>
+          </select>
+        </p>
+        <p id = 'language'>Favorite Language:
+          <select name = 'language'>
+            <option value = 'HTML'>HTML</option>
+            <option value = 'CSS'>CSS</option>
+            <option value = 'Java'>Java</option>
+            <option value = 'Python'>Python</option>
+          </select>
+        </p>
+        <p id = 'coment'>Comment (optional):
+        </p>
+        <textarea name = 'comment'></textarea>
+        <p id = 'button'><input type = 'submit' value = 'Submit Form'>
+        </p>
+
+      </form>
+  </div>
+  </body>
+</html>

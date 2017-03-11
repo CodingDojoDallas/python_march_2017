@@ -1,0 +1,38 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+h2{
+  color: red;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+#first_name{
+  margin-left: 5px;
+
+  margin-bottom: 15px;
+}
+
+#email{
+  margin-left: 38px;
+  margin-bottom: 15px;
+}
+
+#gender{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#contact{
+  margin-bottom: 15px;
+}
+
+#submit{
+  height: 35px;
+  width: 60px;
+  background-color: lightgreen;
+  font-weight: bold;
+  margin-left: 25px;
+}
