@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Great Number Game</title>
+    </head>
+    <body>
+      <h1>Great Number Game</h1>
+      <h3>I'm thinking of a number between 1 and 100, inclusive.</h3>
+      <h3>Take a guess!</h3>
+      {% if session['match'] != "Win" %}
+        {% if session['match'] == "Too high!" or session['match'] == "Too low!" %}
+          <div id='box' class="{{'red' if session['match'] == 'Too high!' else 'redish'}}">
+            <p>{{ session['match'] }}</p>
+          </div>
+        {% endif %}
+        <form action="/guess" method="post">
+          <!-- <input type="hidden" name="action" value="guessed"> -->
+          <input type="text" name="guess" autofocus>
+          <input type="submit" name="submit" value="Submit">
+        </form>
+      {% elif session['match'] == "Win" %}
+        <div id='box'>
+          <p>{{ session['random_num'] }} was the number!</p>
+          <form action="/play_again" method="post">
+            <input type="submit" name="play_again" value="Play again!">
+          </form>
+        </div>
+      {% endif %}
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Friends</title>
+</head>
+<body>
+
+  {{ all_email }}
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form action='/validate' method='POST'>
+    <label for="email">Email Address: <input type="text" name="email" id="email"></label>
+    <input type="submit" value="Submit">
+  </form>
+  <hr>
+
+</body>
+</html>
