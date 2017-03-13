@@ -1,0 +1,28 @@
+<html>
+    <head>
+      <title>My First Template</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/landingpage_styles.css') }}">
+    </head>
+    <body id="index">
+      <h1>Kim's Landing Page</h1>
+      <!-- this will output the value of welcome variable -->
+      <p>Welcome: {{ welcome }}</p>
+      <h4 id="fish">{{ fishing }}</h4>
+      <img src="{{ url_for('static', filename='img/kim_fishing.jpg') }}" id="kim">ÍÍÍ
+
+      <!-- here is an example of embedding a for-loop in our code -->
+      {% for x in range(0,2): %}
+      <p>{{ fishing }}</p>
+      {% endfor %} 
+
+      <!-- here is an example of embedding an if statement in our code -->
+      {% if fishing == "I love to fish!" %}
+      <ul>
+        <li><a href="http://localhost:5000/ninjas">To Learn about Ninjas</a></li>
+        <li><a href="http://localhost:5000/dojos/new">Fill out Dojos Form</a></li>
+      </ul>
+      <p>Hope you enjoyed this short visit!</p>
+      <p>Come back again to check for updates!</p>
+      {% endif %}
+    </body>
+</html>
