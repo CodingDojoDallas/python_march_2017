@@ -1,0 +1,19 @@
+pip install Django
+
+Collecting Django
+Using cached Django-1.10.6-py2.py3-none-any.whl
+Installing collected packages: Django
+Successfully installed Django-1.10.6
+
+Running pip install Django again displays that the requirements is already satisfied.
+
+pip freeze is written for the requirements format in order for other programs to check. pip list is more comprehensive and displays setuptools and pip itself.
+
+pip freeze > requirements.txt
+ls now displays the newly created requirements.txt, with the output from pip freeze saved within.
+
+pip show Django displays the current version of Django and other info about the install.
+
+pip uninstall Django removes the Django install.
+
+pip search Flask searches all the available packages listed on pip with the word Flask appearing in its name or description (it seems).

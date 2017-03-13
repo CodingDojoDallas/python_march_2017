@@ -1,0 +1,11 @@
+USE twitter;		# Select database from examples
+
+SELECT * FROM users;	# Display all rows/cells of users table
+
+USE books;
+
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Algorithm Challenges', 'Martin Puryear', NOW(), NOW());
+
+DELETE FROM books WHERE id = 35;
+
+UPDATE books SET author = 'Dan Brown' WHERE id = 34;
