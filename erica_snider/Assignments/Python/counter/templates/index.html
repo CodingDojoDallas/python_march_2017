@@ -1,0 +1,15 @@
+<html>
+    <head>
+       <title>Counter</title>
+    </head>
+    <body>
+      <h1>Counter</h1>
+      <h3>{{session['counter']}} times</h3>
+      <form action="/plus2" method="post">
+        <input type="submit" name="plus_two" value="+ 2">
+      </form>
+      <form action="/reset" method="post">
+        <input type="submit" name="reset" value="Reset">
+      </form>
+    </body>
+</html>

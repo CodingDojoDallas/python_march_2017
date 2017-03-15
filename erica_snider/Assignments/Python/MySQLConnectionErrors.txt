@@ -1,0 +1,2 @@
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'wildcard'@'localhost' (using password: YES)")
+fix: Make sure to provide the correct password

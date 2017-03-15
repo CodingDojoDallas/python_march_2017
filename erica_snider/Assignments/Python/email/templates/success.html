@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title>Update</title>
+</head>
+<body>
+  <h1>Email addresses entered:</h1>
+  <!-- with all the data we can then construct a more structured output -->
+  {% for each in all_email: %}
+     <p>{{ each['email'] }} -- {{ each['created_at'] }}<!--- Date Time ---> </p>
+  {% endfor %}
+</body>
+</html>
