@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Wall</title>
+</head>
+<body>
+
+  <header>
+    <h1>CodingDojo Wall</h1>
+    <h3>Welcome {{ first_name }}</h3>
+    <form action='/logout' method='POST'>
+      <input type="submit" value="Log Out">
+    </form>
+    <hr>
+  </header>
+  <span>flash messages: </span>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <hr>
+
+  <span>session user id: </span>{{ session['id'] }}
+  <hr>
+
+  <h1>Post a message</h1>
+  <form action='/message' method='POST'>
+    <textarea name="message" id="message"></textarea>
+    <input type="submit" value="Post a message">
+  </form>
+  <hr>
+  <hr>
+
+  {% for message in all_messages %}
+    <h3>Message by {{ message['first_name'] }} on {{ message['last_name'] }} at {{ message['created_at'] }}</h3>
+    <p>{{ message['message'] }}</p>
+
+    {% for comment in all_comments %}
+      {% if comment['messages_id'] == message['id'] %}
+        <h4>Comment by {{ comment['first_name'] }} on {{ comment['last_name'] }} at {{ comment['created_at'] }}</h4>
+        <p>{{ comment['comment'] }}</p>
+      {% endif %}
+    {% endfor %}
+
+    <h4>Post a comment</h4>
+    <form action='/comment' method='POST'>
+      <input type="hidden" name="message_id" value="{{ message['id'] }}">
+      <textarea name="comment" id="comment"></textarea>
+      <input type="submit" value="Post a comment">
+    </form>
+    <hr>
+  {% endfor %}
+
+</body>
+</html>

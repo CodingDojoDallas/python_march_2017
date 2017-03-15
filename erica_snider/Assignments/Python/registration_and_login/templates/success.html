@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Logged in</title>
+</head>
+<body>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <hr>
+
+  {{ session['id'] }}
+  <hr>
+
+  <h1>Congrats, you're logged in!</h1>
+  <hr>
+
+  <form action='/logout' method='POST'>
+    <input type="submit" value="Log Out">
+  </form>
+  <hr>
+
+  {{ all_users }}
+
+</body>
+</html>
