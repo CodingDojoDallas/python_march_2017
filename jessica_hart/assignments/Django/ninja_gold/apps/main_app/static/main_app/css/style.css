@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+body {
+  background: radial-gradient(#f1c40f, #f39c12);
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+#wrapper {
+  margin: auto;
+  width: 960px;
+}
+#gold {
+  display: block;
+  padding: 10px 0px;
+}
+#activities {
+  display: block;
+  height: 150px;
+  overflow: auto;
+  margin: 0px 10px;
+  padding: 10px 25px;
+}
+#count {
+  display: inline-block;
+  padding: 6px 10px;
+  width: 150px;
+}
+#count, .box, #activities {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+}
+h1 {
+  text-align: center;
+}
+h1, h3 {
+  font-weight: normal;
+}
+h3 {
+  font-size: 18px;
+}
+input[type=submit] {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: black;
+    font-size: 16px;
+    margin: 14px 0px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+input[type=submit]:hover {
+    background-color: rgba(243, 156, 18,0.5);
+    color: white;
+}
+.box {
+  display: inline-block;
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+  width: 210px;
+}
+.emph {
+  font-weight: bold;
+}
+.gold {
+  color: gold;
+}
+.red {
+  color: #c0392b;
+}
+.green {
+  color: #27ae60;
+}
+.none {
+  color: grey;
+}

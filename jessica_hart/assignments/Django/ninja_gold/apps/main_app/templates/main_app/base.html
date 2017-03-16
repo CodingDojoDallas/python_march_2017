@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+  </head>
+  <body>
+    <div id="wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

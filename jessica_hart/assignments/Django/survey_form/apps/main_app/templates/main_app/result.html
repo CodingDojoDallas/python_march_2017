@@ -1,0 +1,19 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <h1>Survey Form</h1>
+    <ul>
+      <li>Your Name:</li>
+      <li>{{ name }}</li>
+      <li>Dojo Location:</li>
+      <li>{{ location }}</li>
+      <li>Favorite Language:</li>
+      <li>{{ language }}</li>
+      <li>Comment:</li>
+      <li>{{ comment }}</li>
+    </ul>
+    <form action="/" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Go Back" />
+    </form>
+{% endblock %}

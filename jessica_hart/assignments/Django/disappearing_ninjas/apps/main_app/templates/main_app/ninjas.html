@@ -1,0 +1,16 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+  {% load staticfiles %} <!-- Needed again to avoid static errors -->
+  {% if color == 'purple' %}
+    <img src="{% static 'main_app/img/donatello.jpg' %}" />
+  {% elif color == 'blue' %}
+    <img src="{% static 'main_app/img/leonardo.jpg' %}" />
+  {% elif color == 'orange' %}
+    <img src="{% static 'main_app/img/michelangelo.jpg' %}" />
+  {% elif color == 'red' %}
+    <img src="{% static 'main_app/img/raphael.jpg' %}" />
+  {% else %}
+    <img src="{% static 'main_app/img/notapril.jpg' %}" />
+  {% endif %}
+{% endblock %}
