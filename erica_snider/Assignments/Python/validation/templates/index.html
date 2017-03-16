@@ -1,0 +1,31 @@
+<html>
+    <head>
+       <title>Survey</title>
+    </head>
+    <body>
+      <h1>Survey</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form action='/users' method='post'>
+        Name: <input type='text' name='name'><br/>
+        Dojo Location: <select name="location">
+          <option value="San Jose">San Jose</option>
+          <option value="Dallas">Dallas</option>
+          <option value="Seattle">Seattle</option>
+        </select><br/>
+        Favorite Language <select name="language">
+          <option value="Python">Python</option>
+          <option value="Ruby">Ruby</option>
+          <option value="JavaScript">JavaScript</option>
+        </select><br/>
+        Comment (less than 120 characters):<br/>
+        <textarea name="comment"></textarea><br/>
+        <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+    <head>
+       <title>Disappearing Ninjas</title>
+    </head>
+    <body>
+      <h1>Ninjas!</h1>
+      {% for each in session['color'] %}
+        <img src="static/images/{{ session['color'][each] }}" alt="img">
+      {% endfor %}
+    </body>
+</html>
