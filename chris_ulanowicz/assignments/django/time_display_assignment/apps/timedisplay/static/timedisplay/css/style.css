@@ -1,0 +1,12 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h3,h1 {
+	padding: 10px;
+	border: 1px solid brown;
+	text-align: center;
+	margin: 20px auto;
+	width: 40%;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'ninja_gold/css/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h2>Your Gold: <span>{{ request.session.gold }}</span></h2>
+		</header>
+		<main>
+			<div class="arena">
+				<h3>Farm</h3>
+				<p>(earns 10-20 gold)</p>
+
+				<!-- BONUS: to use route parameters instead of hidden inputs
+				just add the location name to the form action route on each form 
+				i.e. <form action="/process_money/farm" method="post">
+				and then you can delete the hidden inputs.
+				Also see changes in views.py and urls.py to make this work -->
+				
+				<form action="/process_money" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="arena" value="farm" />
+					<input type="submit" value="Find Gold!" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>Cave</h3>
+				<p>(earns 5-10 gold)</p>
+				<form action="/process_money" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="arena" value="cave" />
+					<input type="submit" value="Find Gold!" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>House</h3>
+				<p>(earns 2-5 gold)</p>
+				<form action="/process_money" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="arena" value="house" />
+					<input type="submit" value="Find Gold!" />
+				</form>
+			</div>
+			<div class="arena">
+				<h3>Casino</h3>
+				<p>(win/lose 0-50 gold)</p>
+				<form action="/process_money" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="arena" value="casino" />
+					<input type="submit" value="Find Gold!" />
+				</form>
+			</div>
+		</main>
+		<footer>
+			<h4>Activities: </h4>
+			<div id="log">
+				{% for activity in request.session.log reversed %}
+					{% if 'Lost' in activity %}
+						<p class="red">{{ activity }}</p>
+					{% else %}
+						<p class="green">{{ activity }}</p>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
