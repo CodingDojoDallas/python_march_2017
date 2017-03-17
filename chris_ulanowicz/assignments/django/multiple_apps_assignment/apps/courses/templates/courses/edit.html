@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form action="{% url 'course_update' id=course.id %}" method="post">
+		{% csrf_token %}
+			<label for="name">Name:
+				<input type="text" name="name" id="name" value="{{ course.name }}" placeholder="{{ course.name }}" />
+			</label>
+			<label for="description">Description:
+				<textarea name="description" id="description">{{ course.description }}</textarea>
+			</label>
+			<input type="submit" value="Update" id="button" />
+	</form>
+	<a href="{% url 'course_index' %}">Go Back</a>
+</body>
+</html>

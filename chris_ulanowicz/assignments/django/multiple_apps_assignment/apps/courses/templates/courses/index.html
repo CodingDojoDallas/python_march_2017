@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'courses/css/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<h1>Hi <a href="{% url 'user_show' id=request.session.logged_in %}">{{ request.session.username }}</a>!</h1>
+		<a href="{% url 'user_logout' %}">Logout</a>
+		<h2>Add a new course</h2>
+		<form action="{% url 'course_create' %}" method="POST">
+			{% csrf_token %}
+			<label for="name">Name:
+				<input type="text" name="name" id="name" />
+			</label>
+			<label for="description">Description:
+				<textarea name="description" id="description"></textarea>
+			</label>
+			<input type="submit" value="Add" id="button" />
+		</form>
+		<div id="list">
+			<h2>Courses</h2>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Course Name</th>
+						<th>Description</th>
+						<th>Created By</th>
+						<th>Students</th>
+						<th>Total Students</th>
+						<th>Date Added</th>
+						<th>Date Updated</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for course in courses reversed %}
+					<tr>
+						<td>{{ course.name }}</td>
+						<td>{{ course.description }}</td>
+						<td><a href="{% url 'user_show' id=course.creator.id %}">{{ course.creator.username }}</a></td>
+						<td>{% for student in course.students.all %}
+							<a href="{% url 'user_show' id=student.id %}">{{ student.username }}</a>,
+							{% endfor %}
+						</td>
+						<td>{{ course.students.count }}</td>
+						<td>{{ course.created_at|date:"M j Y g:iA" }}</td>
+						<td>{{ course.updated_at|date:"M j Y g:iA" }}</td>
+						<td>{% if course.creator.id == request.session.logged_in %}
+							<a href="{% url 'course_edit' id=course.id %}">edit</a>
+							<a href="{% url 'course_destroy' id=course.id %}">remove</a>
+							{% else %}
+							<a href="{% url 'course_join' id=course.id %}">join</a>
+							{% endif %}
+						</td>
+					</tr>
+						{% empty %}
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

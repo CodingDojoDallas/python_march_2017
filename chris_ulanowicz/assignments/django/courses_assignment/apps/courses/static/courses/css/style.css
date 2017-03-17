@@ -1,0 +1,54 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#container {
+	padding: 50px;
+}
+h2 {
+	margin-bottom: 30px;
+}
+form {
+	width: 300px;
+	margin-bottom: 30px;
+}
+	label {
+		display: block;
+		margin-bottom: 25px;
+	}
+	input, textarea {
+		float: right;
+	}
+	#button {
+		background-color: green;
+		padding: 7px;
+		color: white;
+	}
+#list {
+	margin-top: 40px;
+}
+
+th, td {
+	padding: 15px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+#back{
+	background-color: lightgrey;
+	text-decoration: none;
+	padding: 8px;
+	border: 1px solid black;
+	color: black;
+	margin-top: 20px;
+}
+#warning {
+	background-color: red;
+	padding: 8px;
+	text-decoration: none;
+	border: 1px solid black;
+	color: white;
+	margin: 20px 0px 0px 20px
+}

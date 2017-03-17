@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'books/css/style.css' %}?{% now 'U' %}">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<a href="{% url 'books_index' %}">Home</a>
+			<a href="{% url 'user_logout' %}">Logout</a>
+		</div>
+		<h2>{{ book.title }}</h2>
+		<h3>{{ book.author.name }}</h3>
+		<h2>Reviews:</h2>
+		<div class="review">
+			{% for review in book.reviews.all reversed %}
+			<h4>Rating: <span class="stars-container stars-{{ review.rating }}">★★★★★</span></h4>
+			<p><a href="{% url 'user_show' id=review.reviewer.id %}">{{ review.reviewer.alias }}</a> says: <span>{{ review.content }}</span></p>
+			<p><span>Posted on: {{ review.created_at }}</span></p>
+				{% if review.reviewer.id == request.session.logged_in %}
+			<a href="{% url 'reviews_destroy' id=review.id %}">Delete this Review</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<fieldset>
+			<legend>Add a Review:</legend>
+			<form action="{% url 'reviews_create' %}" method="post">
+				{% csrf_token %}
+				<textarea name="review" placeholder="review here"></textarea>
+				<select name="rating">
+					<option></option>
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+				<input type="hidden" name="book_id" value="{{ book.id }}" />
+				<input type="submit" value="Submit Review" />
+			</form>
+		</fieldset>
+	</div>
+</body>
+</html>
