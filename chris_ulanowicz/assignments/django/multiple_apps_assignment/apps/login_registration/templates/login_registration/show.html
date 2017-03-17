@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Profile</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'courses/css/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<h1>{{ user.username }}</h1>
+
+		<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+		<p>Birthday: {{ user.birthdate }}</p>
+		<p>Email: {{ user.email }}</p>
+		<p>Join Date: {{ user.created_at }}</p>
+
+		<h2>Courses Created</h2>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Course Name</th>
+					<th>Course Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for course in courses_created %}
+				<tr>
+					<td>{{ course.name }}</td>
+					<td>{{ course.description }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<h2>Courses Joined</h2>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Course Name</th>
+					<th>Course Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for course in courses_joined %}
+				<tr>
+					<td>{{ course.name }}</td>
+					<td>{{ course.description }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<h2>Available Courses</h2>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Course Name</th>
+					<th>Course Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for course in other_courses %}
+				<tr>
+					<td>{{ course.name }}</td>
+					<td>{{ course.description }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

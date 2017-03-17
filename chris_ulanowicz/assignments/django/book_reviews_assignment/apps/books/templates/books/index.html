@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'books/css/style.css' %}?{% now 'U' %}">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>Welcome, {{ request.session.alias }}!</h1>
+			<a href="{% url 'books_new' %}">Add Book and Review</a>
+			<a href="{% url 'user_logout' %}">Logout</a>
+		</div>
+		<div id="left_content">
+			<h2>Recent Book Reviews:</h2>
+			{% for review in reviews %}
+			<div class="review">
+				<h3><a href="{% url 'books_show' id=review.book.id %}">{{ review.book.title }}</a></h3>
+				<h4>Rating: <span class="stars-container stars-{{ review.rating }}">★★★★★</span></h4>
+				<p><a href="{% url 'user_show' id=review.reviewer.id %}">{{ review.reviewer.alias }}</a> says: <span>{{ review.content }}</span></p>
+				<p><span>Posted on: {{ review.created_at }}</span></p>
+			</div>
+			{% endfor %}
+		</div>
+		<div id="right_content">
+			<h2>Other Books with Reviews:</h2>
+			<div id="book_scroll">
+				{% for book in books %}
+					<p><a href="{% url 'books_show' id=book.id %}">{{ book.title }}</a></p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

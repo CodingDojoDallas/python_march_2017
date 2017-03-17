@@ -1,0 +1,18 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	width: 300px;
+	margin: 20px auto;
+}
+
+label {
+	display: block;
+}
+
+.red {
+	color: red;
+	font-style: italic;
+}

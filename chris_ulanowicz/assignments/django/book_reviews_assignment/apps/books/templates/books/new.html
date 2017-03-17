@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<a href="{% url 'books_index' %}">Home</a>
+			<a href="{% url 'user_logout' %}">Logout</a>
+		</div>
+		<h2>Add a New Book Title and a Review:</h2>
+		<form action="{% url 'books_create' %}" method="post">
+			{% csrf_token %}
+			<label for="title">Book Title:
+				<input type="text" name="title" id="title" />
+			</label>
+			<label for="author">Author:
+				Choose from the list:
+				<select name="author">
+					<option></option>
+					{% for author in authors %}
+					<option value="{{ author.id }}">{{ author.name }}</option>
+					{% endfor %}
+				</select>
+				Or add a new author:
+				<input type="text" name="author" id="author" />
+			</label>
+			<label for="review">Review:
+				<textarea name="review" id="review"></textarea>
+			</label>
+			<label for="rating">Rating:
+				<select name="rating" id="rating">
+					<option></option>
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</label>
+			<input type="submit" value="Add Book and Review" />
+		</form>
+	</div>
+</body>
+</html>

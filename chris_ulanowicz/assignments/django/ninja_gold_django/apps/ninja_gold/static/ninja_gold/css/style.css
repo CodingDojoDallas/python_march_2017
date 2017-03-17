@@ -1,0 +1,47 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	padding: 50px;
+	margin: 0px auto;
+}
+
+span {
+	border: 1px solid black;
+	padding: 7px 17px;
+	margin-left: 20px;
+}
+
+main {
+	margin: 40px auto;
+}
+
+.arena {
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+	width: 10%;
+}
+
+p {
+	margin: 20px 0px;
+}
+
+#log {
+	border: 1px solid black;
+	width: 50%;
+	height: 300px;
+	overflow: scroll;
+	padding-left: 15px;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}
