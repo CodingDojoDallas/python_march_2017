@@ -1,0 +1,34 @@
+
+For command: “pip install Django pip list”: 
+
+Requirement already satisfied: “Applications will sometimes need a specific version of a library, because the application may require that a particular bug has been fixed or the application may be written using an obsolete version of the library’s interface.
+
+This means it may not be possible for one Python installation to meet the requirements of every application.
+
+Building wheels for collected packages: list:  Because eggs at that point were poorly understood I assume, they were reimplemented on top of newer PEPs So let's start simple. What exactly are wheels and what's the difference to eggs? Both eggs and wheels are basically just zip files. The main difference is that you could import eggs without having to unpack them. Wheels on the other hand are just distribution archives that you need to unpack upon installation. While there are technically no reasons for wheels not to be importable, that was never the plan to begin with and there is currently no support for importing wheels directly.
+
+Running setup.py bdist_wheel for list ... done: A ``built distribution'' is what you're probably used to thinking of either as a ``binary package'' or an ``installer'' (depending on your background). It's not necessarily binary, though, because it might contain only Python source code and/or byte-code; and we don't call it a package, because that word is already spoken for in Python.
+
+For command: “pip freeze”: 
+Output installed packages in requirements format. packages are listed in a case-insensitive sorted order.
+
+click==: a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary. ... It aims to make the process of writing command line tools quick and fun while also preventing any frustration caused by the inability to implement an intended CLI API.
+
+Django==: is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel.
+
+itsdangerous==:Given a key only you know, you can cryptographically sign your data and hand it over to someone else. When you get the data back you can easily ensure that nobody tampered with it.Granted, the receiver can decode the contents and look into the package, but they can not modify the contents unless they also have your secret key. So if you keep the key secret and complex, you will be fine.
+
+Internally itsdangerous uses HMAC and SHA1 for signing by default and bases the implementation on the Django signing module. It also however supports JSON Web Signatures (JWS). The library is BSD licensed and written by Armin Ronacher though most of the copyright for the design and implementation goes to Simon Willison and the other amazing Django people that made this library possible.
+
+Jinja2==: a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed.
+
+List==: Advertisements. The most basic data structure in Python is the sequence. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth.
+
+MarkupSafe==:   is a library for Python that implements a unicode string that is aware of HTML escaping rules and can be used to implement automatic string escaping. It is used by Jinja 2, the Mako templating engine, the Pylons web framework and many more.
+
+Werkzeuge==:  s a WSGI utility library for Python. It's widely used and BSD licensed.
+
+
+
+
+
