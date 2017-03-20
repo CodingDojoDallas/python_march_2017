@@ -1,0 +1,17 @@
+<html>
+    <head>
+       <title>Survey Results</title>
+    </head>
+    <body>
+      <p>Thanks for submitting this form. You have submitted this form {{ request.session.count }} times.</p>
+      <h1>Submitted Information</h1>
+      <p>Name: {{ request.session.name }}</p>
+      <p>Location: {{ request.session.location }}</p>
+      <p>Language: {{ request.session.language }}</p>
+      <p>Comment: {{ request.session.comment }}</p>
+      <form action="/goback" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Go Back">
+      </form>
+    </body>
+</html>
