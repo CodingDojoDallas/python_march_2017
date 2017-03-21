@@ -1,0 +1,53 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+  <h1>Add a New Course</h1>
+  <div id="form">
+    <form action="/add" method="post">
+      {% csrf_token %}
+      <div class="col">
+        <ul>
+          <li>Name:</li>
+          <li>Description:</li>
+        </ul>
+      </div>
+      <div class="col">
+      <input type="text" name="name" />
+      <textarea name="desc" rows="5" cols="50"></textarea>
+      <input type="submit" value="Add">
+      </div>
+    </form>
+  </div>
+  <h1>Courses</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Description</th>
+        <th>Date Added</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for course in course_list %}
+        <tr>
+          <td>{{ course }}</td>
+          <td>{{ course.desc }}</td>
+          <td>{{ course.created_at }}</td>
+          <!-- <td>
+            <form action="/course/{{ course.id }}/comment" method="get">
+              {% csrf_token %}
+              <a href="" onclick="parentNode.submit();return false;">comment</a>
+            </form>
+          </td> -->
+          <td>
+            <form action="/courses/destroy/{{ course.id }}" method="post">
+              {% csrf_token %}
+              <a href="" onclick="parentNode.submit();return false;">remove</a>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

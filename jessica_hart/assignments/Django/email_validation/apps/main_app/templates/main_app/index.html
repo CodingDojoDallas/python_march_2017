@@ -1,0 +1,11 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+  <h1>Register Email</h1>
+    <form action="/add" method="post">
+      {% csrf_token %}
+      <label>Email Address:</label>
+      <input type="text" name="email">
+      <input type="submit" value="Submit">
+    </form>
+{% endblock %}

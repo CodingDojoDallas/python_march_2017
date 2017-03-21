@@ -1,0 +1,186 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: #3e94ec;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+#wrapper {
+  margin: 50px auto;
+  width: 960px;
+}
+#content {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 20px;
+}
+#form {
+  color: #1B1E24;
+  display: block;
+  margin-bottom: 20px;
+  text-align: top;
+}
+#form  .col {
+  display: inline-block;
+  padding-right: 20px;
+  vertical-align: top;
+}
+#form  .col:last-child {
+  width: 400px;
+}
+#form li {
+  display: block;
+  margin: 8px 5px 25px 0px;
+}
+#buttons {
+  display: block;
+  text-align: center;
+}
+#buttons input[type=submit] {
+  float: none;
+  margin-left: 20px;
+}
+h1 {
+  color: #fafafa;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+}
+h1, ul {
+  margin-bottom: 15px;
+}
+
+a {
+  color: #1B1E24;
+}
+input[type=text] {
+  width: 95.5%;
+}
+textarea {
+  width: 96%;
+}
+input[type=text], textarea {
+  font-size: 14px;
+  margin: 5px;
+  padding: 5px;
+}
+input[type=submit] {
+  color:#1B1E24;
+  font-weight: 300;
+  font-size:16px;
+  float: right;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  background-color: #EBEBEB;
+  border: 2px solid #9EA7AF;
+  border-radius: 3px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+input[type=submit]:hover {
+  color: #fafafa;
+  background-color: #4E5066;
+  border: 2px solid #1B1E24;
+}
+/* ======================
+    Messages Block
+====================== */
+.messages li {
+  color: #fafafa;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+.success {
+  background-color: #66cc91;
+}
+.error {
+  background-color: #e74c3c;
+}
+/* ======================
+    Tables Styles
+====================== */
+/** Table Styles from http://codepen.io/alassetter/pen/cyrfB **/
+table {
+  background: white;
+  border-radius: 3px;
+  border-collapse: collapse;
+  padding: 5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+th {
+  color: #D5DDE5;
+  background: #1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+th:first-child {
+  border-top-left-radius:3px;
+}
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+tr:hover td a {
+  color: #C1C3D1;
+}
+tr:first-child {
+  border-top:none;
+}
+tr:last-child {
+  border-bottom:none;
+}
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+td:last-child {
+  border-right: 0px;
+}

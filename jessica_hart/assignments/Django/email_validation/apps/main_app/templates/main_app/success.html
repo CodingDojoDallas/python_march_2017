@@ -1,0 +1,17 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+  <h1>Email Addresses Entered:</h1>
+  <ul>
+    {% for email in emails %}
+    <li>{{ email }}</li>
+    <li>{{ email.created_at }}</li>
+    <li class="remove">
+      <form action="/remove/{{ email.id }}" method="post">
+        {% csrf_token %}
+        <a href="" onclick="parentNode.submit();return false;">remove</a>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
