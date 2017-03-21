@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Popular</title>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+	<a href="/secrets">Back</a>
+	<div>
+		<h1>Most Popular Secrets...</h1>
+	</div>
+	<div>
+		{% for secret in popular_secrets %}
+			<ul>{{secret.secret}} ({{elapsed_time}}) {{secret.num_likes}}<a href="/likes/{{secret.id}}"> Like</a> | <a href="/delete/{{secret.id}}">Delete</a></ul>
+		{% endfor %}
+	</div>
+</body>
+</html>
