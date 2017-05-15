@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Welcome</title>
+</head>
+<body>
+
+  <!-- notification area -->
+  {% if 'user' in request.session %}
+    <p>Hello, {{request.session.user}}</p>
+  {% endif %}
+
+  {% if 'messages' in request.session %}
+    {% for message in request.session.messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+  {% endif %}
+  <hr>
+
+  <h1>Register new user</h1>
+  <form action='/register' method='POST'>
+    {% csrf_token %}
+    <label for="first_name">First Name: <input type="text" name="first_name" id="first_name" autofocus></label>
+    <label for="last_name">Last Name: <input type="text" name="last_name" id="last_name"></label>
+    <label for="email">Email address: <input type="text" name="email" id="email"></label>
+    <label for="password">Password: <input type="text" name="password" id="password"></label> <!-- change input to type="password" -->
+    <label for="password_conf">Password confirmation: <input type="text" name="password_conf" id="password_conf"></label><!-- change input to type="password" -->
+    <input type="submit" value="Register">
+  </form>
+  <hr>
+
+  <h1>Login</h1>
+  <form action='/login' method='POST'>
+    {% csrf_token %}
+    <label for="email">Email address: <input type="text" name="email" id="email"></label>
+    <label for="password">Password: <input type="text" name="password" id="password"></label> <!-- change input to type="password" -->
+    <input type="submit" value="Log In">
+  </form>
+  <hr>
+
+
+</body>
+</html>
