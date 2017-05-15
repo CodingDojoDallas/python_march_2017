@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Email</title>
+</head>
+<body>
+
+  {% if request.session.message != 'null' %}
+    <p>{{request.session.message}}</p>
+  {% endif %}
+
+  <form action='/validate' method='POST'>
+    {% csrf_token %}
+    <label for="email">Email Address: <input type="text" name="email" id="email" autofocus></label>
+    <input type="submit" value="Submit">
+  </form>
+  <hr>
+
+</body>
+</html>

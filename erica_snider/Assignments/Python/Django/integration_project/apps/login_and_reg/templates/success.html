@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Logged in</title>
+</head>
+<body>
+
+  <!-- notification area -->
+  {% if 'user' in request.session %}
+    <p>Hello, {{request.session.user}}</p>
+  {% endif %}
+  <hr>
+
+  <h1>Congrats, you're logged in!</h1>
+  <hr>
+
+  <form action='/logout' method='POST'>
+    {% csrf_token %}
+    <input type="submit" value="Log Out">
+  </form>
+  <hr>
+
+</body>
+</html>

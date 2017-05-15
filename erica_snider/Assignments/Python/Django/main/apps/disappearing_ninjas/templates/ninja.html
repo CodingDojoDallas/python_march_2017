@@ -1,0 +1,21 @@
+<html>
+    <head>
+       <title>Disappearing Ninjas</title>
+       <style media="screen">
+         img {height:100px;}
+       </style>
+    </head>
+    <body>
+      <h1>Ninjas!</h1>
+      {{color}}
+      {% if len(color.items) > 1 %}
+        {% for item in color.items %}
+          <hr/>
+          <img src="static/disappearing_ninjas/images/{{ item.1 }}" alt="img">
+          <hr/>
+        {% endfor %}
+      {% else %}
+        <img src="static/disappearing_ninjas/images/{{ color }}" alt="img">
+      {% endif %}
+    </body>
+</html>
