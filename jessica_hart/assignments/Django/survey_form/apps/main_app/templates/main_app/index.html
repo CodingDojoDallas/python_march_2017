@@ -1,0 +1,40 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <h1>Survey Form</h1>
+    <form action="/result" method="post">
+      {% csrf_token %}
+      <ul>
+        <li>Your Name:</li>
+        <li><input type="text" name="name" /></li>
+        <li>Dojo Location:</li>
+        <li>
+          <select name="location">
+            <option value="San Jose">San Jose</option>
+            <option value="Bellevue">Bellevue</option>
+            <option value="Burbank">Burbank</option>
+            <option value="Dallas">Dallas</option>
+            <option value="McLean">McLean</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Emeryville">Emeryville</option>
+            <option value="Costa Mesa">Costa Mesa</option>
+          </select>
+        </li>
+        <li>Favorite Language:</li>
+        <li>
+          <select name="language">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Swift">Swift</option>
+            <option value="C#">C#</option>
+          </select>
+        </li>
+        <li>Comment (optional):</li>
+        <li>
+          <textarea name="comment" rows="5" cols="50"></textarea>
+        </li>
+      </ul>
+      <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
