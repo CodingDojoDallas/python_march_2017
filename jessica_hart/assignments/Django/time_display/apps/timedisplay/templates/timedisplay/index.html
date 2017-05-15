@@ -1,0 +1,7 @@
+{% extends 'timedisplay/base.html' %}
+
+{% block content %}
+    <h1>The current time and date:</h1>
+    <p>{{ time }}</p>
+    <!-- Alternative: {% now "F jS, Y h:i A" %} -->
+{% endblock %}

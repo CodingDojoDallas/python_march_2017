@@ -1,0 +1,10 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <h1>Random Word (attempt #{{ request.session.count }})</h1>
+    <p>{{ request.session.string }}</p>
+    <form action="/generate" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Generate" />
+    </form>
+{% endblock %}
